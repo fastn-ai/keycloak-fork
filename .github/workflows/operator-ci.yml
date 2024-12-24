@@ -110,6 +110,11 @@ jobs:
           TRIVY_DB_REPOSITORY: public.ecr.aws/aquasecurity/trivy-db
           TRIVY_JAVA_DB_REPOSITORY: public.ecr.aws/aquasecurity/trivy-java-db
 
+      - name: Upload Trivy scan results to GitHub Security tab
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: trivy-results.sarif
+          category: ${{ matrix.container }}
       # - name: Test operator running locally
       #   run: |
       #     ./mvnw install -Poperator -pl :keycloak-operator -am \
