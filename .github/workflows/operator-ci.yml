@@ -82,11 +82,18 @@ jobs:
           name: keycloak-dist
           path: quarkus/container
 
+      - name: Log in to Docker Hub
+        uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a
+        with:
+          username: waqasshahfastn
+          password: dckr_pat_o62fD_NKlhfDqwXMk2Q3iuwhkEQ
+
       - name: Build Keycloak Docker images
         run: |
           eval $(minikube -p minikube docker-env)
           (cd quarkus/container && docker build --build-arg KEYCLOAK_DIST=$(ls keycloak-*.tar.gz) . -t keycloak:${{ env.version_local }})
           (cd operator && ./scripts/build-testing-docker-images.sh ${{ env.version_local }} keycloak custom-keycloak)
+          docker tag keycloak:${{ env.version_local }} waqasshahfastn/keycloak:one
 
       - name: Test operator running locally
         run: |
