@@ -34,7 +34,7 @@ runs:
       run: |
         # Ensure this plugin is built first to avoid warnings in the build
         # Add MAVEN_OPTS to see if build process is successful
-        export MAVEN_OPTS=-Xss512m
+        export MAVEN_OPTS="-Xss512m -Xmx3090m"
         ./mvnw dependency:tree
         ./mvnw clean install -Pdistribution -am -pl distribution/maven-plugins/licenses-processor
         # By using "dependency:resolve", it will download all dependencies used in later stages for running the tests
