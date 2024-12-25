@@ -51,8 +51,8 @@
         <jboss.snapshots.repo.id>jboss-snapshots-repository</jboss.snapshots.repo.id>
         <jboss.snapshots.repo.url>https://s01.oss.sonatype.org/content/repositories/snapshots/</jboss.snapshots.repo.url>
 
-        <quarkus.version>3.14.4</quarkus.version>
-        <quarkus.build.version>3.14.4</quarkus.build.version>
+        <quarkus.version>3.17.5</quarkus.version>
+        <quarkus.build.version>3.17.5</quarkus.build.version>
 
         <project.build-time>${timestamp}</project.build-time>
 
@@ -192,7 +192,7 @@
         <docker.maven.plugin.version>0.40.3</docker.maven.plugin.version>
         <verifier.plugin.version>1.1</verifier.plugin.version>
         <shade.plugin.version>3.4.1</shade.plugin.version>
-        <smallrye.openapi.generator.plugin.version>3.6.2</smallrye.openapi.generator.plugin.version>
+        <smallrye.openapi.generator.plugin.version>3.13.0</smallrye.openapi.generator.plugin.version>
         <openapi.generator.plugin.version>6.3.0</openapi.generator.plugin.version>
         <build-helper-maven-plugin.version>3.2.0</build-helper-maven-plugin.version>
 
